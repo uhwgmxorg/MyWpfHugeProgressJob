@@ -130,6 +130,18 @@ namespace MyWpfHugeProgressJob
         {
             _progressWindow = new ProgressWindow();
             _progressWindow.Owner = Window.GetWindow(this);
+            _progressWindow.Cancel += CancelEvent;
+        }
+
+        /// <summary>
+        /// CancelEvent
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CancelEvent(object sender, EventArgs e)
+        {
+            _ts.Cancel();
+            EnableDisableButtons(false);
         }
 
         /// <summary>
@@ -141,6 +153,7 @@ namespace MyWpfHugeProgressJob
         {
             // Cancel if a TheHugeJob is still running
             if (_ts != null) _ts.Cancel();
+            _progressWindow.Cancel -= CancelEvent;
         }
 
         #endregion

@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyWpfHugeProgressJob"
         mc:Ignorable="d"
-        Title="ProgressWindow" Height="80" Width="200" MaxHeight="80" MaxWidth="200" MinHeight="80" MinWidth="200" WindowStyle = "ToolWindow" Closing="Window_Closing" Loaded="Window_Loaded" IsVisibleChanged="Window_IsVisibleChanged">
+        Title="ProgressWindow" Height="80" Width="280" MaxHeight="80" MaxWidth="280" MinHeight="80" MinWidth="280"  WindowStyle = "ToolWindow" Closing="Window_Closing" Loaded="Window_Loaded" IsVisibleChanged="Window_IsVisibleChanged">
     <Grid>
-        <ProgressBar Name="TheProgressBar" HorizontalAlignment="Left" Height="22" Margin="10,10,0,0" VerticalAlignment="Top" Width="161"/>
+        <ProgressBar Name="TheProgressBar" HorizontalAlignment="Left" Height="22" Margin="12,10,0,0" VerticalAlignment="Top" Width="161"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="178,11,0,0" VerticalAlignment="Top" Width="75" Click="Button_Cancel_Click"/>
     </Grid>
 </Window>

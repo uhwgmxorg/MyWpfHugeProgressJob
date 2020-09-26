@@ -8,6 +8,7 @@ namespace MyWpfHugeProgressJob
     /// </summary>
     public partial class ProgressWindow : Window
     {
+        public event EventHandler Cancel;
 
         /// <summary>
         /// Constructor
@@ -15,6 +16,16 @@ namespace MyWpfHugeProgressJob
         public ProgressWindow()
         {
             InitializeComponent();            
+        }
+
+        /// <summary>
+        /// Button_Cancel_Click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            Cancel?.Invoke(null, null);
         }
 
         /// <summary>
